@@ -1,7 +1,7 @@
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var num = "#0123456789";
-var sym = "#!*._-~/#";
+var num = "0123456789";
+var sym = "!*._-~/#";
 
 function generatePassword(){
 
@@ -17,36 +17,41 @@ function generatePassword(){
     }
 
     var upperCharRequested = confirm('Would you like upper case characters?');
-    var lowerCaseCharReuqested = confirm('Would you like lower case characters?');
+    var lowerCaseCharRequested = confirm('Would you like lower case characters?');
+    var numRequested = confirm('Would you like to use a number?');
+    var symRequested = confirm('would you like to use a symbol?');
 
-    if( upperCharRequested === false && lowerCaseCharReuqested === false){
+    if( upperCharRequested === false && lowerCaseCharRequested === false){
         alert('You must provide at least one character type');
     }
-
-
-
-    // i still need to declaring an empty string variable to add characters too and return 
-    var passwordStringToPopulate = ''; 
+    if( numRequested === false && symRequested === false){
+        alert('you must provide at least one number character or one symbol character');
+    }
+ // i still need to declaring an empty string variable to add characters too and return 
+    var passwordStringToPopulate = '' ; 
     // also i still need to declare an empty string variable which will use all possible characters requested in order to fill password length
     var stringOfAllPossibleCharacters = '';
-
-
-    // still need to checking what has been requested and populating the two strings above accordingly
+ // still need to checking what has been requested and populating the two strings above accordingly
     if (upperCharRequested === true){
         var upperCharacterToAdd = upperCase[Math.floor(Math.random() * upperCase.length)];
         passwordStringToPopulate += upperCharacterToAdd;
         stringOfAllPossibleCharacters += upperCase;
     }
-
-    if (lowerCaseCharReuqested === true){
+    if (lowerCaseCharRequested === true){
         var lowerCharacterToAdd = lowerCase[Math.floor(Math.random() * lowerCase.length)];
         passwordStringToPopulate += lowerCharacterToAdd;
         stringOfAllPossibleCharacters += lowerCase;
     }
-
-
-
-
+    if (numRequested === true){
+        var numCharacterToAdd = num[Math.floor(Math.random() * num.length)];
+        passwordStringToPopulate += numCharacterToAdd;
+        stringOfAllPossibleCharacters += num;
+    }
+    if (symRequested === true){
+        var symCharacterToAdd = sym[Math.floor(Math.random() * sym.length)];
+        passwordStringToPopulate += symCharacterToAdd;
+        stringOfAllPossibleCharacters += sym;
+    }
 // do loops from zero to the requested password length and checks if the password length is less than the requested length and adds a character every time it isnt
 for (var i = 0; i <= lengthConvertedToNumber; i++){
     if (passwordStringToPopulate.length < lengthConvertedToNumber){
@@ -54,6 +59,9 @@ for (var i = 0; i <= lengthConvertedToNumber; i++){
         passwordStringToPopulate += characterToAdd;
     }
 }
+
+
+
     //returning the string - this was initially empty and will have gone through the population process...
     return passwordStringToPopulate;
 
