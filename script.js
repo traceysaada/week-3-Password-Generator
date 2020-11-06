@@ -1,10 +1,11 @@
+//set up password variables
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var num = "0123456789";
 var sym = "!*._-~/#";
 
 function generatePassword(){
-
+//promts added for requesting password
     var lengthOfPasswordRequested = prompt('How long would you like your password to be?');
     var lengthConvertedToNumber = parseInt(lengthOfPasswordRequested);
 
@@ -20,18 +21,18 @@ function generatePassword(){
     var lowerCaseCharRequested = confirm('Would you like lower case characters?');
     var numRequested = confirm('Would you like to use a number?');
     var symRequested = confirm('would you like to use a symbol?');
-
+//boolean added here for prompting correct password mix of numbers, letters, symbols, uper & lower case.
     if( upperCharRequested === false && lowerCaseCharRequested === false){
         alert('You must provide at least one character type');
     }
     if( numRequested === false && symRequested === false){
         alert('you must provide at least one number character or one symbol character');
     }
- // i still need to declaring an empty string variable to add characters too and return 
+ //  
     var passwordStringToPopulate = '' ; 
     // also i still need to declare an empty string variable which will use all possible characters requested in order to fill password length
     var stringOfAllPossibleCharacters = '';
- // still need to checking what has been requested and populating the two strings above accordingly
+ // 
     if (upperCharRequested === true){
         var upperCharacterToAdd = upperCase[Math.floor(Math.random() * upperCase.length)];
         passwordStringToPopulate += upperCharacterToAdd;
@@ -60,13 +61,9 @@ for (var i = 0; i <= lengthConvertedToNumber; i++){
     }
 }
 
-
-
-    //returning the string - this was initially empty and will have gone through the population process...
-    return passwordStringToPopulate;
-
-}   
-
+  //returning the string - this was initially empty and will have gone through the population process...
+     return passwordStringToPopulate;
+}
 
 function writePassword() {
  
