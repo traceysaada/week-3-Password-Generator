@@ -28,6 +28,7 @@ function generatePassword(){
     if( numRequested === false && symRequested === false){
         alert('you must provide at least one number character or one symbol character');
     }
+    
  //  
     var passwordStringToPopulate = '' ; 
     // also i still need to declare an empty string variable which will use all possible characters requested in order to fill password length

@@ -1,5 +1,23 @@
 # 03 JavaScript: Password Generator
 
+I have managed to generate the prompt questions & the prompt box works once the generate password is clicked.
+
+user is able to answer the prompts inside the box & click buttons to continue.
+
+the program runs throught the various prompts stating the criteria of the password.
+
+prompt appears if incorrect length of password is imputted & what the criteria should be.
+
+it also states that a uppercase letter or lowercase letter must be used, if the user clicks no on both.
+
+this also works on the number & symbol promps. 
+
+Then it generates a password that is random but uses the specifictions of the user, upper, lower, num & symbol.
+
+all prompts work & generate the correct random password.
+
+
+
 ## Your Task
 
 This week’s homework requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
