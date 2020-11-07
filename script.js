@@ -11,6 +11,7 @@ function generatePassword(){
 
     if (lengthConvertedToNumber < 8){
         alert('Please provide a number greater than 7');
+        return "Try Again"
     }
 
     if (lengthConvertedToNumber > 128){
@@ -24,14 +25,17 @@ function generatePassword(){
 //boolean added here for prompting correct password mix of numbers, letters, symbols, uper & lower case.
     if( upperCharRequested === false && lowerCaseCharRequested === false){
         alert('You must provide at least one character type');
+        return "Try Again"
     }
     if( numRequested === false && symRequested === false){
         alert('you must provide at least one number character or one symbol character');
+// added the below 'try again'it has now fixed the problem of error in generating a passord it will not generate one unless all criteria is met
+        return "Try Again"
     }
     
  //  
     var passwordStringToPopulate = '' ; 
-    // also i still need to declare an empty string variable which will use all possible characters requested in order to fill password length
+    // added below so all possible characters requested are in order to fill password length
     var stringOfAllPossibleCharacters = '';
  // 
     if (upperCharRequested === true){
@@ -54,7 +58,7 @@ function generatePassword(){
         passwordStringToPopulate += symCharacterToAdd;
         stringOfAllPossibleCharacters += sym;
     }
-// do loops from zero to the requested password length and checks if the password length is less than the requested length and adds a character every time it isnt
+// loops from zero to the requested password length and checks if the password length is less than the requested length and adds a character every time it isnt
 for (var i = 0; i <= lengthConvertedToNumber; i++){
     if (passwordStringToPopulate.length < lengthConvertedToNumber){
         var characterToAdd = stringOfAllPossibleCharacters[Math.floor(Math.random() * stringOfAllPossibleCharacters.length)];

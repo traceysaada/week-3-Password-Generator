@@ -16,6 +16,8 @@ Then it generates a password that is random but uses the specifictions of the us
 
 all prompts work & generate the correct random password.
 
+if a false is return then the box will not put a password in but asks the user to try again.
+
 
 
 ## Your Task
